@@ -20,7 +20,7 @@ terraform {
 
   backend "remote" {
     # Update to your Terraform Cloud organization
-    organization = "managedkube"
+    organization = "odata"
 
     workspaces {
       name = "kubernetes-ops-staging-10-vpc"
@@ -36,7 +36,7 @@ provider "aws" {
 # VPC
 #
 module "vpc" {
-  source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/vpc?ref=v1.0.30"
+  source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/vpc?ref=v2.0.92"
 
   aws_region       = local.aws_region
   azs              = ["us-east-1a", "us-east-1c", "us-east-1d"]
